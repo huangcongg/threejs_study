@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      // 二.从CDN或静态主机安装
+      // import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
+      // const scene = new THREE.Scene();
+      // console.log(scene);
+    </script>
+    <script type="module">
+      // 三.示例
+      // 通过访问 https://cdn.skypack.dev/three 来查找最新版本。
+
+      import { OrbitControls } from "https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js";
+      const controls = new OrbitControls();
+      console.log(controls);
+    </script>
+  </body>
+</html>

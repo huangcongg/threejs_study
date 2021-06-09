@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./js/three.js"></script>
+  <script>
+    // 定义渲染器
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // 定义照相机
+    const camera = new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,500);
+    camera.position.set(0,0,100);
+    camera.lookAt(0,0,0);
+
+    // 定义场景
+    const scene = new THREE.Scene();
+
+    // 定义材质
+    const material = new THREE.LineBasicMaterial({color:0x0000ff});
+
+    // 定义集合体
+    const point = [];
+    point.push(new THREE.Vector3(-10,0,0));
+    point.push(new THREE.Vector3(0,10,0));
+    point.push(new THREE.Vector3(10,0,0));
+    const geometry = new THREE.BufferGeometry().setFromPoints(point);
+    const line = new THREE.Line(geometry,material);
+
+
+    // 将集合体添加到场景并渲染
+    scene.add(line);
+    scene.background = new THREE.Color(0xffffff) //设置场景的背景为白色,参数也可以写成字符串'white'
+    renderer.render(scene,camera);
+  </script>
+</body>
+</html>
